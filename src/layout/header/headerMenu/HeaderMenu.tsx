@@ -28,7 +28,11 @@ const StyledHeaderMenu = styled.nav`
   ul {
     display: flex;
     gap: 30px;
-    justify-content: center;
+    justify-content: space-between;
+  }
+
+  @media ${theme.media.tablet} {
+    display: none;
   }
 `
 
@@ -44,6 +48,7 @@ const Mask = styled.span`
 
   & + & {
     top: 50%;
+
     span {
       display: inline-block;
       transform: translateY(-50%); //поднимаем верхнюю часть на 50% выше, чтобы отобразить низ
@@ -53,13 +58,13 @@ const Mask = styled.span`
 
 const ListItem = styled.li`
   position: relative;
-  
+
   &::before { //псевдоэлемент 
     content: '';
     display: inline-block;
     height: 3px;
     background-color: ${theme.color.accent};
-    
+
     position: absolute;
     top: 50%;
     left: -10px;
@@ -72,7 +77,7 @@ const ListItem = styled.li`
     &::before {
       transform: scale(1); //при наведении линия появляется
     }
-    
+
     ${Mask} {
       transform: skewX(12deg) translateX(5px); //Х горионталь
       color: ${theme.color.font};
