@@ -29,8 +29,8 @@ export const Work = (props: WorkPropsType) => {
 
 const StyledWork = styled.div`
   background-color: ${theme.color.secondaryBg};
-  max-width: 540px;
-  width: 100%;
+  width: 330px;
+  flex-grow: 1;
 
   ${Links} {
     padding: 10px 0;
@@ -38,6 +38,10 @@ const StyledWork = styled.div`
     & + ${Links} { //каждый элемент который идет после линка
       margin-left: 20px;
     }
+  }
+  
+  @media ${theme.media.desktop} {
+    max-width: 540px;
   }
 `
 

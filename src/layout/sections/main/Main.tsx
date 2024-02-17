@@ -29,7 +29,7 @@ const StyledMain = styled.div`
   min-height: 100vh;
   background-color: ${theme.color.primaryBg};
   display: flex;
-  padding: 94px 0 0;
+  padding: 94px 0 94px;
 `
 
 const MainTitle = styled.h1`
