@@ -6,5 +6,4 @@ export const Container = styled.div`
   min-height: 100%;
   padding: 0 15px; //сверху снизу 0, 15 по бокам 
   margin: 0 auto; //выравнивание по центру
-  outline: 1px solid red;
 `
