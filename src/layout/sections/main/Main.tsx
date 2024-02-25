@@ -5,6 +5,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
 import {font} from "../../../styles/Common";
+import Typewriter from 'typewriter-effect';
 
 export const Main = () => {
     return (
@@ -14,7 +15,17 @@ export const Main = () => {
                     <div>
                         <SmallText>Hi There</SmallText>
                         <Name>I am <span>Svetlana Dyablo</span></Name>
-                        <MainTitle>A Web Developer.</MainTitle>
+                        <MainTitle>
+                            <p>A Web Developer.</p>
+                            <Typewriter
+                                options={{
+                                    strings: ['A Web Developer.', 'A Frontend Developer.'],
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 50,
+                                }}
+                            />
+                        </MainTitle>
                     </div>
                     <PhotoWrapper>
                         <Photo src={photo} alt=''/>
@@ -36,12 +47,14 @@ const MainTitle = styled.h1`
   //font-size: 27px; эти значеня передает в mixin
   //font-weight: 400;
   ${font({weight: 400, Fmax: 27, Fmin: 20})}
+  p {
+    display: none;
+  }
 `
 
 const PhotoWrapper = styled.div`
   position: relative;
   z-index: 0;
-  margin-top: 65px;
 
   &::before {
     content: '';
@@ -59,6 +72,10 @@ const PhotoWrapper = styled.div`
       left: 20px;
     }
   }
+
+  @media ${theme.media.mobile} {
+    margin-top: 65px; 
+  }
 `
 
 const Photo = styled.img`
@@ -66,7 +83,7 @@ const Photo = styled.img`
   height: 430px;
   object-fit: cover;
   margin-right: 20px;
-  
+
   @media ${theme.media.mobile} {
     width: 310px;
     height: 380px;
@@ -112,3 +129,5 @@ const SmallText = styled.h2`
   font-size: 14px;
   font-weight: 400;
 `
+
+
